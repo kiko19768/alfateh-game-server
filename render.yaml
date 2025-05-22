@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: alfateh-game-server
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://meyoten4:1071998Kk@alfatth.fjmdexa.mongodb.net/?retryWrites=true&w=majority&appName=alfatth
+      - key: DB_NAME
+        value: alfatth_game
+      - key: JWT_SECRET
+        value: alfatth-game-secret-key-change-in-production
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: MAX_PLAYERS_PER_INSTANCE
+        value: 100
+      - key: SAVE_INTERVAL
+        value: 300000
